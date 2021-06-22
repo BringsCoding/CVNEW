@@ -22,6 +22,15 @@ h6 {
 
 body {
   margin: 0;
+  --blog-color: rgb(0, 255, 255);
+  --hire-me-color: rgb(60, 44, 204);
+  --background-top:linear-gradient(
+    145deg,
+    rgba(171, 184, 15, 1) 0%,
+    rgba(204, 13, 13, 1) 100%
+  );
+
+
 }
 
 /* Änderung der Farbe bei der Markierung */
@@ -35,11 +44,7 @@ body {
   padding-top: 4.5rem;
   text-align: center;
   background: rgb(171, 184, 15);
-  background: linear-gradient(
-    145deg,
-    rgba(171, 184, 15, 1) 0%,
-    rgba(204, 13, 13, 1) 100%
-  );
+  background:var(--background-top);
   position: relative;
 }
 /* Veränderung des text in der Top-Box von meinem Namen */
@@ -76,7 +81,9 @@ body {
   color: rgb(43, 226, 52);
   text-decoration: none;
   font-family: "Big Shoulders Stencil Display", cursive;
+  transition:  0.5s ease-out;
 }
+
 
 /* Änderung des button Hire-me */
 .hire-me {
@@ -92,14 +99,23 @@ body {
 /* wenn man mit der Maus drüber fährt */
 .link-nav:hover {
   color: rgb(180, 65, 225);
-  background-color: rgb(88, 62, 28);
+  background-color: rgb(41, 41, 41);
   text-decoration: underline;
+  outline:3px solid red;
+  outline-style: groove;
 }
 
 /* Wenn man draufklickt in diesem Moment */
 .link-nav:active {
   color: rgb(38, 200, 52);
   background-color: red;
+}
+
+.link-nav:focus {
+  background-color: rgb(250, 250, 250);
+  transition:  0.5s ease-out;
+  outline: 2px solid red  ;
+
 }
 
 /* Ende des Top und der Navigation  
@@ -120,7 +136,7 @@ body {
   max-width: 40rem;
   margin: 0 auto;
   padding: 2rem;
-  background-color: cyan;
+  background-color:var(--blog-color);
 }
 
 /* Rückt die Überschriften nacht Rechts */
@@ -168,9 +184,11 @@ main > * + * {
 }
 /* Farbe und Text des Link */
 .footer-link {
-  background-color: rgb(237 146 100);
-  color: crimson;
+  background-color:var(--background-top);
+  color: rgb(243, 243, 243);
   text-decoration: wavy;
+  border-bottom: 1px solid ;
+
 }
 
 /* Media Sektion */
@@ -195,7 +213,7 @@ main > * + * {
 @media screen and (max-width: 900px) {
   .hire-me {
     position: fixed;
-    background-color: rgb(60, 44, 204);
+    background-color:var(--hire-me-color);
   }
 }
 
