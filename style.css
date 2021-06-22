@@ -22,6 +22,7 @@ h6 {
 
 body {
   margin: 0;
+  --test: yellow;
   --blog-color: rgb(0, 255, 255);
   --hire-me-color: rgb(60, 44, 204);
   --background-top:linear-gradient(
@@ -29,8 +30,6 @@ body {
     rgba(171, 184, 15, 1) 0%,
     rgba(204, 13, 13, 1) 100%
   );
-
-
 }
 
 /* Änderung der Farbe bei der Markierung */
@@ -60,6 +59,16 @@ body {
   font-size: 1.25em;
 }
 
+.top-slogan::after {
+  content: "🖱️";
+  color: aqua;
+}
+
+.top-slogan::before {
+  content: "⌨️";
+  color: aliceblue;
+}
+
 .my-nav {
   display: flex;
   flex-direction: column;
@@ -81,7 +90,7 @@ body {
   color: rgb(43, 226, 52);
   text-decoration: none;
   font-family: "Big Shoulders Stencil Display", cursive;
-  transition:  0.5s ease-out;
+  transition:  0.4s cubic-bezier(0.6, -0.28, 0.74, 0.05);
 }
 
 
@@ -98,7 +107,7 @@ body {
 
 /* wenn man mit der Maus drüber fährt */
 .link-nav:hover {
-  color: rgb(180, 65, 225);
+  color: rgb(255, 255, 255);
   background-color: rgb(41, 41, 41);
   text-decoration: underline;
   outline:3px solid red;
@@ -197,7 +206,7 @@ main > * + * {
 @media screen and (min-width: 700px) {
   html {
     font-size: 14px;
-    background-color: rgb(211, 190, 190);
+    background-color:rgb(139, 143, 161);
   }
 }
 
@@ -205,7 +214,7 @@ main > * + * {
 @media screen and (min-width: 992px) {
   html {
     font-size: 18px;
-    background-color: rgb(217 217 217);
+    background-color:gainsboro
   }
 }
 
