@@ -1,0 +1,217 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.875rem;
+  background-color: black;
+  -webkit-print-color-adjust: exact;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+/* Änderung der Farbe bei der Markierung */
+*::selection {
+  background-color: rgb(175, 209, 25);
+}
+
+/* änderung der Gesamten Top Box */
+.top {
+  padding: 3rem 1rem;
+  padding-top: 4.5rem;
+  text-align: center;
+  background: rgb(171, 184, 15);
+  background: linear-gradient(
+    145deg,
+    rgba(171, 184, 15, 1) 0%,
+    rgba(204, 13, 13, 1) 100%
+  );
+  position: relative;
+}
+/* Veränderung des text in der Top-Box von meinem Namen */
+.top-name {
+  font-size: 4rem;
+}
+/* Größen änderung von meinem Namen */
+.top-myname {
+  font-size: 1em;
+}
+/* Großen änderung von meinem Solgan "24 years old an from Germany" */
+.top-slogan {
+  font-size: 1.25em;
+}
+
+.my-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Die Navigation bricht um */
+@media screen and (min-width: 760px) {
+  .my-nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* Zieht die Navigations auseinander | bearbeitung der Nav */
+.link-nav {
+  font-size: 1.25rem;
+  padding: 0.25rem 1.5rem;
+  color: rgb(43, 226, 52);
+  text-decoration: none;
+  font-family: "Big Shoulders Stencil Display", cursive;
+}
+
+/* Änderung des button Hire-me */
+.hire-me {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: rgb(83, 143, 23);
+  color: cornsilk;
+}
+
+/* wenn man mit der Maus drüber fährt */
+.link-nav:hover {
+  color: rgb(180, 65, 225);
+  background-color: rgb(88, 62, 28);
+  text-decoration: underline;
+}
+
+/* Wenn man draufklickt in diesem Moment */
+.link-nav:active {
+  color: rgb(38, 200, 52);
+  background-color: red;
+}
+
+/* Ende des Top und der Navigation  
+!
+!
+!
+!*/
+
+/* Beginn des Hauptteiles
+!
+!
+!
+ */
+
+/* Bringt den "Blog-Beitrag" mittig */
+
+.surface {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: cyan;
+}
+
+/* Rückt die Überschriften nacht Rechts */
+.heading {
+  position: relative;
+  left: -1rem;
+}
+
+main > * + * {
+  border-top: 5px solid rgb(12, 197, 27);
+  padding-left: 1rem;
+}
+.profilhead {
+  padding-left: 1rem;
+}
+
+.textProfil {
+  padding-left: 1rem;
+}
+
+/* Bringt die Überschrift und die Jahre zusammen */
+.mini-heading-one {
+  display: inline-block;
+  margin-bottom: 1px;
+}
+.text-after-mini-heading-one {
+  display: inline-block;
+  padding-left: 1rem;
+}
+
+/* Größe änderung */
+.footer {
+  background-color: rgb(171, 184, 15);
+  background: linear-gradient(
+    145deg,
+    rgba(171, 184, 15, 1) 0%,
+    rgba(204, 13, 13, 1) 100%
+  );
+  padding: 3rem;
+}
+/* Fabre und Text des Footers */
+.footer-text {
+  text-align: center;
+  margin: 0px;
+}
+/* Farbe und Text des Link */
+.footer-link {
+  background-color: rgb(237 146 100);
+  color: crimson;
+  text-decoration: wavy;
+}
+
+/* Media Sektion */
+
+/* änderung ab 700px */
+@media screen and (min-width: 700px) {
+  html {
+    font-size: 14px;
+    background-color: rgb(211, 190, 190);
+  }
+}
+
+/* Große der Kompletten Fläsche */
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 18px;
+    background-color: rgb(217 217 217);
+  }
+}
+
+/* Ab 900 Hire-me button änderung der Farbe */
+@media screen and (max-width: 900px) {
+  .hire-me {
+    position: fixed;
+    background-color: rgb(60, 44, 204);
+  }
+}
+
+@media print {
+  .hire-me {
+    display: none;
+  }
+
+  .my-nav {
+    display: none;
+  }
+}
+
+/* Spricht die Klassen in voller breite an */
+@media screen and (min-width: 768px) {
+  .surface > * + * {
+    margin-top: 5rem;
+  }
+}
