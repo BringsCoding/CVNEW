@@ -25,7 +25,7 @@ body {
   --test: yellow;
   --blog-color: rgb(0, 255, 255);
   --hire-me-color: rgb(60, 44, 204);
-  --background-top:linear-gradient(
+  --background-top: linear-gradient(
     145deg,
     rgba(171, 184, 15, 1) 0%,
     rgba(204, 13, 13, 1) 100%
@@ -34,7 +34,7 @@ body {
 
 /* Änderung der Farbe bei der Markierung */
 *::selection {
-  background-color: rgb(175, 209, 25);
+  background-color: rgb(83, 143, 23);
 }
 
 /* änderung der Gesamten Top Box */
@@ -43,7 +43,7 @@ body {
   padding-top: 4.5rem;
   text-align: center;
   background: rgb(171, 184, 15);
-  background:var(--background-top);
+  background: var(--background-top);
   position: relative;
 }
 /* Veränderung des text in der Top-Box von meinem Namen */
@@ -90,9 +90,8 @@ body {
   color: rgb(43, 226, 52);
   text-decoration: none;
   font-family: "Big Shoulders Stencil Display", cursive;
-  transition:  0.4s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+  transition: 0.4s cubic-bezier(0.6, -0.28, 0.74, 0.05);
 }
-
 
 /* Änderung des button Hire-me */
 .hire-me {
@@ -103,6 +102,9 @@ body {
   border-radius: 0.25rem;
   background-color: rgb(83, 143, 23);
   color: cornsilk;
+  opacity: 1.6;
+  transform-origin: top right;
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
 }
 
 /* wenn man mit der Maus drüber fährt */
@@ -110,21 +112,25 @@ body {
   color: rgb(255, 255, 255);
   background-color: rgb(41, 41, 41);
   text-decoration: underline;
-  outline:3px solid red;
+  outline: 3px solid red;
   outline-style: groove;
 }
 
 /* Wenn man draufklickt in diesem Moment */
 .link-nav:active {
-  color: rgb(38, 200, 52);
+  color: rgb(200, 197, 38);
   background-color: red;
 }
 
 .link-nav:focus {
   background-color: rgb(250, 250, 250);
-  transition:  0.5s ease-out;
-  outline: 2px solid red  ;
+  transition: 0.5s ease-out;
+  outline: 2px solid red;
+}
 
+.top:hover .hire-me {
+  opacity: 1;
+  transform: scale(1.7);
 }
 
 /* Ende des Top und der Navigation  
@@ -145,13 +151,15 @@ body {
   max-width: 40rem;
   margin: 0 auto;
   padding: 2rem;
-  background-color:var(--blog-color);
+  background-color: var(--blog-color);
 }
 
 /* Rückt die Überschriften nacht Rechts */
 .heading {
   position: relative;
   left: -1rem;
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
 }
 
 main > * + * {
@@ -193,11 +201,10 @@ main > * + * {
 }
 /* Farbe und Text des Link */
 .footer-link {
-  background-color:var(--background-top);
+  background-color: var(--background-top);
   color: rgb(243, 243, 243);
   text-decoration: wavy;
-  border-bottom: 1px solid ;
-
+  border-bottom: 1px solid;
 }
 
 /* Media Sektion */
@@ -206,7 +213,7 @@ main > * + * {
 @media screen and (min-width: 700px) {
   html {
     font-size: 14px;
-    background-color:rgb(139, 143, 161);
+    background-color: rgb(139, 143, 161);
   }
 }
 
@@ -214,7 +221,7 @@ main > * + * {
 @media screen and (min-width: 992px) {
   html {
     font-size: 18px;
-    background-color:gainsboro
+    background-color: gainsboro;
   }
 }
 
@@ -222,7 +229,7 @@ main > * + * {
 @media screen and (max-width: 900px) {
   .hire-me {
     position: fixed;
-    background-color:var(--hire-me-color);
+    background-color: var(--hire-me-color);
   }
 }
 
@@ -240,5 +247,18 @@ main > * + * {
 @media screen and (min-width: 768px) {
   .surface > * + * {
     margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+  }
+  .grid-content {
+    margin-top: 4rem;
   }
 }
+/* Grid wirkt hier bei 768px */
+@media screen and (min-width: 768px) {
+  .textProfil {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: 9.9rem;
+  }
